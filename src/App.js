@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import UploadImage from './UploadImage'
+import Canva from './Canva'
+import React, { useState } from 'react'
 
 function App() {
+  const [imageUrl, setImageUrl] = useState()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UploadImage imageUrl={imageUrl} setImageUrl={setImageUrl}></UploadImage>
+      <Canva imageUrl={imageUrl}></Canva>
     </div>
   );
 }
